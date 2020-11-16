@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pizza</title>
+    <!-- Bootstrap styles first -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Our styles -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<header>
+    <h2>Timms Hill Pizzeria</h2>
+</header>
+<body id="page">
+<div class="container">
+    <nav>
+        <ul id="tabs" class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#details">1. Pizza Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#delivery">2. Delivery Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#order">3. Order Confirmation</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tab-content">
+
+        <div id="details" class="tab-pane active">
+            <h2>Pizza Selections</h2>
+            <form>
+                <fieldset>
+                    <legend>Select Your Size</legend>
+                    <input type="radio" name="size" id="size-sml"  value="small" data-price="7" checked="checked">
+                    <label for="size-sml">small $7.00</label>
+                    <input type="radio" name="size" id="size-md"  value="medium" data-price="9">
+                    <label for="size-md">medium $9.00</label>
+                    <input type="radio" name="size" id="size-lg"  value="large" data-price="12" >
+                    <label for="size-lg">large $12.00</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend> Select Your Crust</legend>
+                    <input type="radio" name="crust" id="crust-thin" value="thin" checked="checked">
+                    <label for="crust-thin">thin</label>
+                    <input type="radio" name="crust" id="crust-pan"  value="pan" >
+                    <label for="crust-pan">pan</label>
+                    <input type="radio" name="crust" id="crust-gluten-free"  value="gluten-free" >
+                    <label for="crust-gluten-free">gluten free</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend> Select Your Meats ($1.50 each)</legend>
+                    <input type="checkbox" name="meats" id="meats-pepperoni"  value="pepperoni" data-price="1.50">
+                    <label for="meats-pepperoni">pepperoni</label>
+                    <input type="checkbox" name="meats" id="meats-sausage"  value="sausage" data-price="1.50">
+                    <label for="meats-sausage">sausage</label>
+                    <input type="checkbox" name="meats" id="meats-bacon"  value="bacon" data-price="1.50">
+                    <label for="meats-bacon">bacon</label>
+                    <input type="checkbox" name="meats" id="meats-meatballs"  value="meatballs" data-price="1.50">
+                    <label for="meats-meatballs">meatballs</label>
+                    <input type="checkbox" name="meats" id="meats-buffalo-chicken"  value="buffalo-chicken" data-price="1.50">
+                    <label for="meats-buffalo-chicken">buffalo chicken</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select your Veggies ($1.00 each)</legend>
+                    <input type="checkbox" name="veggies" id="veggies-green-pepper"  value="green-pepper" data-price="1.00">
+                    <label for="veggies-green-pepper">green pepper</label>
+                    <input type="checkbox" name="veggies" id="veggies-mushrooms"  value="mushrooms" data-price="1.00">
+                    <label for="veggies-mushrooms">mushrooms</label>
+                    <input type="checkbox" name="veggies" id="veggies-pineapples"  value="pineapples" data-price="1.00">
+                    <label for="veggies-pineapples">pineapples</label>
+                    <input type="checkbox" name="veggies" id="veggies-red-onions"  value="red-onions" data-price="1.00">
+                    <label for="veggies-red-onions">red onions</label>
+                    <input type="checkbox" name="veggies" id="veggies-basil"  value="basil" data-price="1.00">
+                    <label for="veggies-basil">basil</label>
+                </fieldset>
+
+
+                <br>
+
+            </form>
+
+        </div>
+
+        <div id="delivery" class="tab-pane">
+            <h2>Please enter your delivery information:</h2>
+            <form>
+
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="name" required="required" ><br><br>
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="name" required="required"><br><br>
+
+                <label for="address">Street Address (Apt #):</label>
+                <input type="text" id="address" name="address" required="required"><br><br>
+
+                <label for="telephone">Telephone:</label>
+                <input type="text" id="telephone" name="phone" required="required">
+
+            </form>
+
+
+            <button id="orderButton" class="btn btn-outline-primary btn-md">Order</button><br>
+
+        </div>
+
+        <div id="order" class="tab-pane">
+            <p id="output"></p>
+
+            <div class="container w-50 table">
+                <table>
+                    <tr>
+                        <th> Delivery Information:</th>
+                    </tr>
+                    <tr>
+                        <th>Name:</th>
+                    </tr>
+                    <tr>
+                        <td id="greetNameOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                    </tr>
+                    <tr>
+                        <td id="greetAddressOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Telephone:</th>
+                    </tr>
+                    <tr>
+                        <td id="greetTelephoneOutput"></td>
+
+                    </tr>
+                    <tr>
+                        <th>Pizza Details:</th>
+                    </tr>
+                    <tr>
+                        <th>Size:</th>
+                        <td id="size"></td>
+                    </tr>
+                    <tr>
+                        <th>Crust:</th>
+                        <td id="crustOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Size Cost($):</th>
+                        <td id="priceSizeOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Meats($1.50 each):</th>
+                        <td id="meats"></td>
+                    </tr>
+                    <tr>
+                        <th>Veggies($1.00 each):</th>
+                        <td id="veggies"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Subtotal($):</th>
+                        <td id="subOrderTotalOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Tax($):</th>
+                        <td id="taxOutput"></td>
+                    </tr>
+                    <tr>
+                        <th>Delivery Fee($):</th>
+                        <td id="deliveryOutput"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Total Amount Due($):</th>
+                        <td id="totalAmountDueOutput"></td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<footer>Copyright &copy; 2020 Timms Hill Pizzeria<br>Debra@Smith.com</footer>
+
+
+<!-- jQuery first -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- Popper and Bootstrap second -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Our code last -->
+<script src ="code.js"></script>
+
+
+
+</body>
+</html>
